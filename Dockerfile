@@ -1,4 +1,4 @@
-FROM alastairhm/alpine-lighttpd:latest
+FROM alastairhm/alpine-lighttpd:3.3
 MAINTAINER Alastair Montgomery <alastair@montgomery.me.uk>
 
 RUN apk --update add \
