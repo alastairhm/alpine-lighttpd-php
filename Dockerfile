@@ -1,5 +1,4 @@
-FROM alastairhm/alpine-lighttpd:3.3
-MAINTAINER Alastair Montgomery <alastair@montgomery.me.uk>
+FROM alastairhm/alpine-lighttpd:3.11
 
 RUN apk --update add \
     php-common \
@@ -17,7 +16,6 @@ RUN apk --update add \
     php-soap \
     php-xmlrpc \
     php-posix \
-    php-mcrypt \
     php-gettext \
     php-ldap \
     php-ctype \

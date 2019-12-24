@@ -8,6 +8,6 @@ docker build -t alpine-lighttpd-php .
 
 Run using;
 
-docker run --name "my-lighttpd-php" -p 8000:80 -v $(pwd):/var/www docker pull alastairhm/alpine-lighttpd-php
+docker run --name "my-lighttpd-php" -p 8000:80 -v $(pwd):/var/www alastairhm/alpine-lighttpd-php
 
 Works for static & PHP web content.
