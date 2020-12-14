@@ -1,4 +1,4 @@
-FROM alastairhm/alpine-lighttpd:3.11
+FROM alastairhm/alpine-lighttpd:3.12
 
 RUN apk --update add \
     php-common \

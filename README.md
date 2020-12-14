@@ -4,10 +4,14 @@ Lighttpd and PHP unning on an Alpine Docker image.
 
 Build using;
 
+```bash
 docker build -t alpine-lighttpd-php .
+```
 
 Run using;
 
-docker run --name "my-lighttpd-php" -p 8000:80 -v $(pwd):/var/www alastairhm/alpine-lighttpd-php
+```bash
+docker run --name "my-lighttpd-php" --rm -p 8000:80 -v $(pwd):/var/www alastairhm/alpine-lighttpd-php
+```
 
 Works for static & PHP web content.
