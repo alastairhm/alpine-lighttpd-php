@@ -1,6 +1,6 @@
 [![](http://dockeri.co/image/alastairhm/alpine-lighttpd-php)](https://index.docker.io/u/alastairhm/alpine-lighttpd-php/)
 
-Lighttpd and PHP unning on an Alpine Docker image.
+Lighttpd and PHP running on an Alpine Docker image.
 
 Build using;
 
