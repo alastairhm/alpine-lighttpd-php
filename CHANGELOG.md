@@ -10,7 +10,7 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 ### Changed
 
-* Install SimpleXML module
+* Install SimpleXML module [wdssmq](https://github.com/wdssmq)
 
 ## [[3.14]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.14) - 2021-07-22
 
