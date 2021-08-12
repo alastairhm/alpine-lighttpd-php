@@ -7,6 +7,7 @@ RUN apk --update add \
     php-gd \
     php-curl \
     php-xml \
+    php-simplexml \
     php-pgsql \
     php-imap \
     php-cgi \
