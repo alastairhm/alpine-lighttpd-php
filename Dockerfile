@@ -1,4 +1,4 @@
-FROM alastairhm/alpine-lighttpd:3.14
+FROM ghcr.io/alastairhm/alpine-lighttpd:latest
 
 RUN apk --update add \
     php-common \
@@ -24,8 +24,8 @@ RUN apk --update add \
     rm -rf /var/cache/apk/*
 
 ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
-RUN mkdir -p /run/lighttpd/
-RUN chown www-data. /run/lighttpd/
+RUN mkdir -p /run/lighttpd/ && \
+    chown www-data. /run/lighttpd/
 
 EXPOSE 80
 VOLUME /var/www
