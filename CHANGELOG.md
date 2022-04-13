@@ -8,7 +8,7 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 ## [Unreleased]
 
-* Build with 3.15 Alpine base
+* Build with 3.15 Alpine base, lighttpd/1.4.64, PHP Version 7.4.28
 
 ### Added
 
