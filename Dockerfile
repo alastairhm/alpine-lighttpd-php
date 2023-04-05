@@ -15,7 +15,6 @@ RUN apk --update add \
     php-pdo \
     php-pdo_pgsql \
     php-soap \
-    php-xmlrpc \
     php-posix \
     php-gettext \
     php-ldap \
