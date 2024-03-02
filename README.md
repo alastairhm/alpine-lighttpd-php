@@ -2,6 +2,8 @@
 
 [![](http://dockeri.co/image/alastairhm/alpine-lighttpd-php)](https://index.docker.io/u/alastairhm/alpine-lighttpd-php/)
 
+[![Deploy Docker](https://github.com/alastairhm/alpine-lighttpd-php/actions/workflows/deploy.yml/badge.svg)](https://github.com/alastairhm/alpine-lighttpd-php/actions/workflows/deploy.yml)
+
 Lighttpd and PHP running on an Alpine Docker image.
 
 Build using;
