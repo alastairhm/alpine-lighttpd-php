@@ -1,0 +1,16 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  build:
+    desc: Build for Docker Hub
+    cmds:
+      - docker buildx build -t alastairhm/alpine-lighttpd-php:latest ./
+    silent: true
+  push:
+    desc: Push to Docker Hub
+    cmds:
+      - docker push alastairhm/alpine-lighttpd-php:latest
+    silent: true

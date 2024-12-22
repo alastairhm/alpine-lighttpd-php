@@ -8,6 +8,10 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 ## [Unreleased]
 
+## [[3.21.0]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.21.0) - 2024-12-22
+
+* Taskfile
+* Build with 3.21 Alpine base, lighttpd/1.4.73, PHP Version 8.3.15
 * Build with 3.19 Alpine base, lighttpd/1.4.73, PHP Version 8.2.16
 * Build with 3.17 Alpine base, lighttpd/1.4.67, PHP Version 8.1.17
 * Build with 3.15 Alpine base, lighttpd/1.4.64, PHP Version 7.4.28

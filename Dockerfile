@@ -24,7 +24,7 @@ RUN apk --update add \
 
 ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
 RUN mkdir -p /run/lighttpd/ && \
-    chown www-data. /run/lighttpd/
+    chown www-data: /run/lighttpd/
 
 EXPOSE 80
 VOLUME /var/www
