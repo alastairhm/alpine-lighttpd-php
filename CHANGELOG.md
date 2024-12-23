@@ -8,6 +8,8 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 ## [Unreleased]
 
+* Update Github action versions
+
 ## [[3.21.0]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.21.0) - 2024-12-22
 
 * Taskfile
