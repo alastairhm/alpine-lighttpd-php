@@ -8,7 +8,7 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 ## [Unreleased]
 
-## [[3.22.0]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.21.0) - 2025-10-12
+## [[3.22.0]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.22.0) - 2025-10-12
 
 * Built with 3.22 Alpine Base
 * Update Github action versions
