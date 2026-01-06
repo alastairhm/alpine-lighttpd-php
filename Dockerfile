@@ -1,4 +1,4 @@
-FROM ghcr.io/alastairhm/alpine-lighttpd:latest
+FROM alastairhm/alpine-lighttpd:latest
 
 RUN apk --update add \
     php-common \
