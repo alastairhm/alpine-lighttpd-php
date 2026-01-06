@@ -11,4 +11,5 @@
         from_secret: docker_username
       password:
         from_secret: docker_token
-      tag: latest
+      tags:
+        - latest
