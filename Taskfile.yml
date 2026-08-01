@@ -16,4 +16,6 @@ tasks:
     silent: true
   test:
     desc: Test Image
-      - docker run --name "my-lighttpd-php" --rm -p 8000:80 -v $(pwd):/var/www alastairhm/alpine-lighttpd-php
+    cmds:
+      - docker run --name "my-lighttpd-php" --rm -p 8000:80 -v $(pwd)/html:/var/www alastairhm/alpine-lighttpd-php
+    silent: true
