@@ -10,6 +10,22 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 * Woodpecker CI pipeline testing
 
+### Fixed
+
+* Removed dead `php-fpm -D &&` from the container `CMD`: the `php-fpm` package
+  was never installed, so the container crashed on every start before
+  lighttpd even launched. PHP is served via lighttpd's own `mod_fastcgi`
+  spawning `php-cgi` (see `mod_fastcgi.conf`), so `php-fpm` was unnecessary.
+* Switched `chown`/`server.username`/`server.groupname` from `www-data` to
+  `lighttpd`, matching the base `alpine-lighttpd` image's package-provided
+  user (the base image no longer creates a `www-data` account)
+* Restored the `mod_access` dotfile/dot-directory deny rule in
+  `lighttpd.conf`, which this image's own conf file was silently dropping
+  from the base image
+* Use `COPY` instead of `ADD` for a local file
+* Moved `index.php` into `html/` and updated README/Taskfile volume-mount
+  examples to avoid serving the whole mounted directory verbatim
+
 ## [[3.23.0]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.23.0) - 2025-12-07
 
 * Built with 3.23 Alpine Base

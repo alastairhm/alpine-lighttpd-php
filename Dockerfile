@@ -22,12 +22,12 @@ RUN apk --update add \
     php-dom && \
     rm -rf /var/cache/apk/*
 
-ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
+COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
 RUN mkdir -p /run/lighttpd/ && \
-    chown www-data: /run/lighttpd/
+    chown lighttpd: /run/lighttpd/
 
 EXPOSE 80
 VOLUME /var/www
 
-CMD php-fpm -D && lighttpd -D -f /etc/lighttpd/lighttpd.conf
+CMD ["/usr/sbin/lighttpd", "-D", "-f", "/etc/lighttpd/lighttpd.conf"]
 
