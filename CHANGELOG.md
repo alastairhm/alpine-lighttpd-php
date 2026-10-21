@@ -10,6 +10,20 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 * Woodpecker CI pipeline testing
 
+### Security
+
+* Build PHP 8.4.27 from Alpine's `php84` APKBUILD to fix php2shell (CVE-2026-109618, CVE-2026-109619), until Alpine 3.23 ships a patched package ([#5](https://github.com/alastairhm/alpine-lighttpd-php/issues/5))
+
+### Fixed
+
+* Create the `www-data` user, which the rebuilt `alastairhm/alpine-lighttpd` base no longer provides
+* `CMD` now starts lighttpd directly. The base image dropped its `ENTRYPOINT`, so the old `php-fpm` command (php-fpm was never installed) stopped the container from starting
+
+### Removed
+
+* `php-imap`: Alpine has no PHP 8.4 package, and the PHP 8.3 extension it installed was never loaded
+* `php-json`: built into PHP 8.4
+
 ## [[3.23.0]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.23.0) - 2025-12-07
 
 * Built with 3.23 Alpine Base
