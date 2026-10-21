@@ -28,16 +28,19 @@ docker build -t alpine-lighttpd-php .
 Run from Docker Hub using;
 
 ```bash
-docker run --name "my-lighttpd-php" --rm -p 8000:80 -v $(pwd):/var/www alastairhm/alpine-lighttpd-php
+docker run --name "my-lighttpd-php" --rm -p 8000:80 -v $(pwd)/html:/var/www alastairhm/alpine-lighttpd-php
 ```
 
 Or from GitHub packages using;
 
 ```bash
-docker run --name "my-lighttpd-php" --rm -p 8000:80 -v $(pwd):/var/www ghcr.io/alastairhm/alpine-lighttpd-php
+docker run --name "my-lighttpd-php" --rm -p 8000:80 -v $(pwd)/html:/var/www ghcr.io/alastairhm/alpine-lighttpd-php
 ```
 
-Works for static & PHP web content.
+Works for static & PHP web content. Mount a directory that contains only the files you
+intend to serve — anything under the mounted path is reachable over HTTP, so avoid
+mounting a repo root or other directory containing non-public files (e.g. `.git`,
+`Dockerfile`, secrets).
 
 ```text
           _    _ __  __ 

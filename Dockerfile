@@ -62,12 +62,9 @@ RUN apk --update add --repository /tmp/php-pkgs \
     ! apk info -v | grep '^php84-' | grep -v -- "-$PHP_VERSION-" && \
     rm -rf /tmp/php-pkgs /var/cache/apk/*
 
-ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
-# The base image no longer creates the www-data user (only the group)
-RUN (id www-data >/dev/null 2>&1 || \
-        adduser -D -H -h /home/www-data -s /bin/false -u 1000 -G www-data www-data) && \
-    mkdir -p /run/lighttpd/ && \
-    chown www-data: /run/lighttpd/
+COPY lighttpd.conf /etc/lighttpd/lighttpd.conf
+RUN mkdir -p /run/lighttpd/ && \
+    chown lighttpd: /run/lighttpd/
 
 EXPOSE 80
 VOLUME /var/www
