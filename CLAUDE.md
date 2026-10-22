@@ -8,13 +8,7 @@ A Docker image (`alastairhm/alpine-lighttpd-php`) that serves static and PHP con
 
 ## Commands
 
-Tasks are defined in `Taskfile.yml` (https://taskfile.dev):
-
-```bash
-task build   # docker buildx build -t alastairhm/alpine-lighttpd-php:latest ./
-task push    # push :latest to Docker Hub
-task test    # run the image on :8000 serving ./html
-```
+Tasks are defined in `Taskfile.yml` (https://taskfile.dev): `task build`, `task push`, `task test`.
 
 Smoke test: open http://localhost:8000 after `task test`; `html/index.php` renders `phpinfo()` and should report the expected PHP version. Mount `html/` (or another directory of public files only), not the repo root, since anything under the mount is served.
 
