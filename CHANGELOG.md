@@ -10,6 +10,10 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 * Woodpecker CI pipeline testing
 
+### Security
+
+* Build PHP 8.4.27 from Alpine's `php84` APKBUILD to fix php2shell (CVE-2026-109618, CVE-2026-109619), until Alpine 3.23 ships a patched package ([#5](https://github.com/alastairhm/alpine-lighttpd-php/issues/5))
+
 ### Fixed
 
 * Removed dead `php-fpm -D &&` from the container `CMD`: the `php-fpm` package
@@ -25,6 +29,11 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 * Use `COPY` instead of `ADD` for a local file
 * Moved `index.php` into `html/` and updated README/Taskfile volume-mount
   examples to avoid serving the whole mounted directory verbatim
+
+### Removed
+
+* `php-imap`: Alpine has no PHP 8.4 package, and the PHP 8.3 extension it installed was never loaded
+* `php-json`: built into PHP 8.4
 
 ## [[3.23.0]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.23.0) - 2025-12-07
 
