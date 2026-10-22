@@ -16,6 +16,7 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 ### Fixed
 
+* GitHub Actions no longer pushes pull request builds to `ghcr.io/...:latest`; PRs now only build, tagged `pr-<number>`
 * Removed dead `php-fpm -D &&` from the container `CMD`: the `php-fpm` package
   was never installed, so the container crashed on every start before
   lighttpd even launched. PHP is served via lighttpd's own `mod_fastcgi`
