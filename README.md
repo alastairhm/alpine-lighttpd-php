@@ -7,7 +7,7 @@
 Lighttpd and PHP running on an Alpine Docker image.
 
 > [!WARNING]
-> **php2shell (CVE-2026-109618 / CVE-2026-109619).** Images built before this fix ship PHP 8.4.16. That version is vulnerable to two critical, unauthenticated remote code execution flaws, fixed upstream in PHP 8.4.27. See [issue #5](https://github.com/alastairhm/alpine-lighttpd-php/issues/5).
+> **php2shell (CVE-2026-109618 / CVE-2026-109619).** Images built before this fix ship PHP 8.4.16. That version is vulnerable to two critical, unauthenticated remote code execution flaws, fixed upstream in PHP 8.4.27. See [issue #5](https://github.com/alastairhm/alpine-lighttpd-php/issues/5) and the write-up [php2shell and alpine-lighttpd-php](https://blog.0x32.co.uk/posts/php2shell-alpine-lighttpd-php/).
 >
 > Alpine 3.23 has not yet published a patched `php84` package. Until it does, the `Dockerfile` builds `php84` 8.4.27 from Alpine's own APKBUILD, so the first build takes much longer than usual. Once a patched image is published, pull it again:
 >
