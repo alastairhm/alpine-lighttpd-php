@@ -8,6 +8,8 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 ## [Unreleased]
 
+## [[3.23.5]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.23.5) - 2026-10-22
+
 * Woodpecker CI pipeline testing
 
 ### Security
