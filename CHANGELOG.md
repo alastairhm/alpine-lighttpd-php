@@ -10,6 +10,10 @@ Dates in this file are in format of YYYY-MM-DD (2019-12-13 means 13th of Decembe
 
 * Link the [php2shell blog post](https://blog.0x32.co.uk/posts/php2shell-alpine-lighttpd-php/) from the README
 
+### Security
+
+* Build PHP 8.4.28 (released 2026-11-19) from Alpine's `php84` APKBUILD, until Alpine 3.23 ships it. Alpine 3.23 currently ships 8.4.27, so the temporary build stage stays ([#9](https://github.com/alastairhm/alpine-lighttpd-php/issues/9)). This picks up the 12 CVE fixes in that release, some of them remotely exploitable: [CVE-2026-129289](https://app.opencve.io/cve/CVE-2026-129289), [CVE-2026-129291](https://app.opencve.io/cve/CVE-2026-129291), [CVE-2026-129501](https://app.opencve.io/cve/CVE-2026-129501), [CVE-2026-129292](https://app.opencve.io/cve/CVE-2026-129292), [CVE-2026-128090](https://app.opencve.io/cve/CVE-2026-128090), [CVE-2026-15353](https://app.opencve.io/cve/CVE-2026-15353), [CVE-2026-129506](https://app.opencve.io/cve/CVE-2026-129506), [CVE-2026-126714](https://app.opencve.io/cve/CVE-2026-126714), [CVE-2026-115560](https://app.opencve.io/cve/CVE-2026-115560), [CVE-2026-129481](https://app.opencve.io/cve/CVE-2026-129481), [CVE-2026-128064](https://app.opencve.io/cve/CVE-2026-128064), [CVE-2026-127960](https://app.opencve.io/cve/CVE-2026-127960)
+
 ## [[3.23.5]](https://github.com/alastairhm/alpine-lighttpd-php/releases/tag/3.23.5) - 2026-10-22
 
 * Woodpecker CI pipeline testing

@@ -1,11 +1,12 @@
 # Build php84 from Alpine's own APKBUILD at a newer upstream release than the
-# Alpine repos currently ship (8.4.27 fixes CVE-2026-109618 / CVE-2026-109619).
-# Drop this stage once Alpine 3.23 publishes php84 >= 8.4.27.
+# Alpine repos currently ship (8.4.27 fixed CVE-2026-109618 / CVE-2026-109619;
+# 8.4.28 fixes a further 12 CVEs, issue #9).
+# Drop this stage once Alpine 3.23 publishes php84 >= 8.4.28.
 FROM alpine:3.23 AS php-build
 
-ARG PHP_VERSION=8.4.27
+ARG PHP_VERSION=8.4.28
 # sha256 of php-$PHP_VERSION.tar.xz from https://www.php.net/releases/
-ARG PHP_SHA256=dcf93923b0e38e0d5252b25b796520b5a47761a08b3488b6d0b5d1115764d3f0
+ARG PHP_SHA256=0c8ec360e5dd8154f270b2fd50cd44ecc824e6ee39c85f911312b80d4daecd72
 
 RUN apk --update add alpine-sdk && \
     adduser -D builder && \
@@ -35,7 +36,7 @@ RUN sed -i \
 
 FROM alastairhm/alpine-lighttpd:latest
 
-ARG PHP_VERSION=8.4.27
+ARG PHP_VERSION=8.4.28
 
 COPY --from=php-build /home/builder/packages/community /tmp/php-pkgs
 COPY --from=php-build /home/builder/.abuild/*.rsa.pub /etc/apk/keys/

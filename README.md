@@ -9,13 +9,15 @@ Lighttpd and PHP running on an Alpine Docker image.
 > [!WARNING]
 > **php2shell (CVE-2026-109618 / CVE-2026-109619).** Images built before this fix ship PHP 8.4.16. That version is vulnerable to two critical, unauthenticated remote code execution flaws, fixed upstream in PHP 8.4.27. See [issue #5](https://github.com/alastairhm/alpine-lighttpd-php/issues/5) and the write-up [php2shell and alpine-lighttpd-php](https://blog.0x32.co.uk/posts/php2shell-alpine-lighttpd-php/).
 >
-> Alpine 3.23 has not yet published a patched `php84` package. Until it does, the `Dockerfile` builds `php84` 8.4.27 from Alpine's own APKBUILD, so the first build takes much longer than usual. Once a patched image is published, pull it again:
+> **PHP 8.4.28 (2026-11-19)** fixes a further 12 CVEs, some of them remotely exploitable, so images on 8.4.27 should be updated too. See [issue #9](https://github.com/alastairhm/alpine-lighttpd-php/issues/9) and the [CHANGELOG](CHANGELOG.md) for the full list.
+>
+> Alpine 3.23 ships `php84` 8.4.27 but has not yet published 8.4.28. Until it does, the `Dockerfile` builds `php84` 8.4.28 from Alpine's own APKBUILD, so the first build takes much longer than usual. Once a patched image is published, pull it again:
 >
 > ```bash
 > docker pull alastairhm/alpine-lighttpd-php:latest
 > ```
 >
-> If you can't update yet, setting `session.upload_progress.enabled = 0` in `/etc/php84/conf.d/` reduces the risk but does not remove it.
+> For php2shell only: if you can't update yet, setting `session.upload_progress.enabled = 0` in `/etc/php84/conf.d/` reduces the risk but does not remove it.
 >
 > This build also drops `php-imap`. Alpine has no PHP 8.4 IMAP package, and the PHP 8.3 extension it used to install was never loaded.
 
